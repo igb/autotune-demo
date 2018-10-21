@@ -1,0 +1,40 @@
+{
+   "objectiveQuery" : "ts(ibrown.devel.specjvm2008-xml.validation, sd.ibrown.devel.specjvm2008-xml.validation.{{instanceId}},specjvm/result/composite)",
+   "jobKey" : "smf1/ibrown/devel/specjvm2008-xml.validation",
+   "duration" : "30.minutes",
+   "startupTimeout" : "3.minutes",
+   "instanceRange" : "0-1",
+   "parameters" : [
+      {
+         "max" : "12288",
+         "min" : "1024",
+         "whetlabName" : "XX_InitialHeapSize",
+         "name" : "XX:InitialHeapSize",
+         "parameterType" : "integer",
+	 "parameterUnit" : "1048576"
+      },
+      {
+         "min" : "1024",
+         "whetlabName" : "XX_MaxHeapSize",
+         "name" : "XX:MaxHeapSize",
+         "max" : "12288",
+         "parameterType" : "integer",
+	 "parameterUnit" : "1048576"
+      },
+      {
+         "whetlabName" : "XX_MetaspaceSize",
+         "min" : "33554432",
+         "name" : "XX:MetaspaceSize",
+         "max" : "536870912",
+         "parameterType" : "integer"
+      },
+      {
+         "name" : "XX:MaxMetaspaceSize",
+         "min" : "33554432",
+         "whetlabName" : "XX_MaxMetaspaceSize",
+         "max" : "536870912",
+         "parameterType" : "integer"
+      }
+   ],
+   "name" : "singlemark-xml.validation"
+}

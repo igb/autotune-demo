@@ -1,0 +1,35 @@
+import os
+ 
+
+
+#install autotune demo dist from Packer
+
+install_autotune_demo = Packer.install('autotune-demo', version='latest', role='ibrown')
+
+
+ 
+run_autotune_demo = Process(
+  name = 'run_autotune_demo',
+  cmdline = '/usr/lib/jvm/java-1.8.0-twitter/bin/java -cp autotune-demo.jar com.twitter.jvm.autotune.Demo {{thermos.ports[admin]}} {{thermos.ports[health]}} com.twitter.jvm.autotune.functions.Fof001=0 com.twitter.jvm.autotune.functions.Fof002=0 com.twitter.jvm.autotune.functions.Fof003=0 com.twitter.jvm.autotune.functions.Fof004=0 com.twitter.jvm.autotune.functions.Fof005=0 com.twitter.jvm.autotune.functions.Fof006=0 com.twitter.jvm.autotune.functions.Fof007=0 com.twitter.jvm.autotune.functions.Fof008=0')
+
+my_health_check_config = HealthCheckConfig(
+initial_interval_secs=10,
+  max_consecutive_failures=1,
+  min_consecutive_successes=2,
+  interval_secs=10)
+
+# describe the task
+run_autotune_demo_task = Task(
+	    resources = Resources(cpu = 4, ram = 16*GB, disk=10*GB),	
+  	    processes = [install_autotune_demo, run_autotune_demo,
+	    Stats(library = "metrics", port = 'admin')],
+	    constraints = order(install_autotune_demo, run_autotune_demo)
+	
+
+  )
+
+
+ 
+jobs = [
+  Service(name = 'autotune_demo', cluster = 'smf1', role = 'ibrown', environment = 'devel', instances='4', task = run_autotune_demo_task,     health_check_config = my_health_check_config)
+]
