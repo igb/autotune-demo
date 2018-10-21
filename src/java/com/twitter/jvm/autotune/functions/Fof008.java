@@ -1,3 +1,5 @@
+package com.twitter.jvm.autotune.functions;
+
 import java.awt.geom.*;
 
 public class Fof008 {

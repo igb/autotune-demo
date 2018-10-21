@@ -1,4 +1,9 @@
+package com.twitter.jvm.autotune.functions;
+
+
 import java.awt.geom.*;
+
+
 
 public class Fof001 {
 	public static Point2D.Double[] points = {
