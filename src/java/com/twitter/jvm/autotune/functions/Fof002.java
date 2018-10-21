@@ -1,8 +1,10 @@
 package com.twitter.jvm.autotune.functions;
 
+import com.twitter.jvm.autotune.Function;
+
 import java.awt.geom.*;
 
-public class Fof002 {
+public class Fof002 implements Function {
 	public static Point2D.Double[] points = {
 		new Point2D.Double(-7.935547, 0.059912),
 		new Point2D.Double(-7.929932, 0.249854),

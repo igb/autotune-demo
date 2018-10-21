@@ -4,16 +4,16 @@ import java.io.*;
 
 public class StatsServer extends TinyServer {
 
-    private  String summaryResultsFile;
+    private  Double value;
 
-    public StatsServer(int port, String summaryResultsFile) {
+    public StatsServer(int port, Double value) {
         super(port);
-        this.summaryResultsFile=summaryResultsFile;
+        this.value = value;
     }
 
     public static void main(String[] args) throws IOException {
 
-        StatsServer statsServer = new StatsServer(Integer.parseInt(args[0]),  args[1]);
+        StatsServer statsServer = new StatsServer(Integer.parseInt(args[0]),  Double.parseDouble(args[1]));
 
 
         statsServer.run();
@@ -30,35 +30,17 @@ public class StatsServer extends TinyServer {
 
     @Override
     public String getContent() {
-        return getStats(summaryResultsFile);
-    }
 
-    private static String getStats(String summaryResultsFile)  {
         StringBuffer sb = new StringBuffer();
         sb.append("{\n");
 
-       try {
-           InputStream is = new FileInputStream(summaryResultsFile);
-           BufferedReader buf = new BufferedReader(new InputStreamReader(is));
-           String line = buf.readLine();
-           while (line != null) {
-               if (line.contains("Result")) {
-                   String result = line.split("\\:")[2].split(" ")[1];
-                   sb.append(" \"specjvm/result/composite\" : ");
-                   sb.append(result);
-                   sb.append("\n");
-               }
-               line = buf.readLine();
-           }
 
-       } catch (IOException ioe) {
-           sb.append("error: ");
-           sb.append(ioe.getMessage());
-           ioe.printStackTrace();
-       }
+        sb.append(" \"autotune/perf/result\" : ");
+        sb.append(value);
+        sb.append("\n");
 
         sb.append("}");
-         return sb.toString();
+        return sb.toString();
 
     }
 }
