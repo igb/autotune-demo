@@ -1,6 +1,6 @@
 {
    "objectiveQuery" : "ts(ibrown.devel.autotune_demo, sd.ibrown.devel.autotune_demo.{{instanceId}},autotune/perf/result)",
-   "jobKey" : "ibrown.devel.autotune_demo",
+   "jobKey" : "smf1/ibrown/devel/autotune_demo",
    "duration" : "5.minutes",
    "startupTimeout" : "1.minutes",
    "instanceRange" : "0-1",
@@ -9,56 +9,56 @@
          "max" : "3.5",
          "min" : "-2",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof001",
-         "name" : "com.twitter.jvm.autotune.functions.Fof001",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof001",
          "parameterType" : "float"
       },
       {
          "max" : "7.4",
          "min" : "-7.9",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof002",
-         "name" : "com.twitter.jvm.autotune.functions.Fof002",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof002",
          "parameterType" : "float"
       },
       {
          "max" : "16.1",
          "min" : "-15.6",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof003",
-         "name" : "com.twitter.jvm.autotune.functions.Fof003",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof003",
          "parameterType" : "float"
       },
       {
          "max" : "30.3",
          "min" : "-31.5",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof004",
-         "name" : "com.twitter.jvm.autotune.functions.Fof004",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof004",
          "parameterType" : "float"
       },
       {
          "max" : "62",
          "min" : "-62.3",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof005",
-         "name" : "com.twitter.jvm.autotune.functions.Fof005",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof005",
          "parameterType" : "float"
       },
       {
          "max" : "123.8",
          "min" : "-123.4",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof006",
-         "name" : "com.twitter.jvm.autotune.functions.Fof006",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof006",
          "parameterType" : "float"
       },
       {
          "max" : "255",
          "min" : "-247",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof007",
-         "name" : "com.twitter.jvm.autotune.functions.Fof007",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof007",
          "parameterType" : "float"
       },
       {
          "max" : "526",
          "min" : "-489",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof008",
-         "name" : "com.twitter.jvm.autotune.functions.Fof008",
+         "name" : "Dcom.twitter.jvm.autotune.functions.Fof008",
          "parameterType" : "float"
       }
 
