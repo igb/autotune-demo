@@ -1,6 +1,7 @@
 import os
  
 
+RESOURCES = Resources(cpu = 4, ram = 16*GB, disk = 10*GB)
 
 #install autotune demo dist from Packer
 
@@ -8,9 +9,6 @@ install_autotune_demo = Packer.install('autotune-demo', version='latest', role='
 
 
  
-run_autotune_demo = Process(
-  name = 'run_autotune_demo',
-  cmdline = '/usr/lib/jvm/java-1.8.0-twitter/bin/java -cp autotune-demo.jar com.twitter.jvm.autotune.Demo {{thermos.ports[admin]}} {{thermos.ports[health]}} com.twitter.jvm.autotune.functions.Fof001=0 com.twitter.jvm.autotune.functions.Fof002=0 com.twitter.jvm.autotune.functions.Fof003=0 com.twitter.jvm.autotune.functions.Fof004=0 com.twitter.jvm.autotune.functions.Fof005=0 com.twitter.jvm.autotune.functions.Fof006=0 com.twitter.jvm.autotune.functions.Fof007=0 com.twitter.jvm.autotune.functions.Fof008=0')
 
 my_health_check_config = HealthCheckConfig(
 initial_interval_secs=10,
@@ -18,9 +16,11 @@ initial_interval_secs=10,
   min_consecutive_successes=2,
   interval_secs=10)
 
+run_autotune_demo = JVMProcess( arguments=' -cp autotune-demo.jar com.twitter.jvm.autotune.Demo {{thermos.ports[admin]}} {{thermos.ports[health]}}', jvm=Java8(extra_jvm_flags = '  -Dcom.twitter.jvm.autotune.functions.Fof001=0 -Dcom.twitter.jvm.autotune.functions.Fof002=0 -Dcom.twitter.jvm.autotune.functions.Fof003=0 -Dcom.twitter.jvm.autotune.functions.Fof004=0 -Dcom.twitter.jvm.autotune.functions.Fof005=0 -Dcom.twitter.jvm.autotune.functions.Fof006=0 -Dcom.twitter.jvm.autotune.functions.Fof007=0 -Dcom.twitter.jvm.autotune.functions.Fof008=0'),resources=RESOURCES)
+
 # describe the task
 run_autotune_demo_task = Task(
-	    resources = Resources(cpu = 4, ram = 16*GB, disk=10*GB),	
+	    resources = RESOURCES,	
   	    processes = [install_autotune_demo, run_autotune_demo,
 	    Stats(library = "metrics", port = 'admin')],
 	    constraints = order(install_autotune_demo, run_autotune_demo)
