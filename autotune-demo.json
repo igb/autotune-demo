@@ -16,50 +16,50 @@
          "parameterType" : "float"
       },
       {
-         "max" : "7.4",
-         "min" : "-7.9",
+         "max" : "7.9999",
+         "min" : "-9.8",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof002",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof002",
          "parameterType" : "float"
       },
       {
-         "max" : "16.1",
-         "min" : "-15.6",
+         "max" : "16.99",
+         "min" : "-18.83",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof003",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof003",
          "parameterType" : "float"
       },
       {
-         "max" : "30.3",
-         "min" : "-31.5",
+         "max" : "34.99",
+         "min" : "-36.48",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof004",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof004",
          "parameterType" : "float"
       },
       {
-         "max" : "62",
-         "min" : "-62.3",
+         "max" : "70.99",
+         "min" : "-71.25",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof005",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof005",
          "parameterType" : "float"
       },
       {
-         "max" : "123.8",
-         "min" : "-123.4",
+         "max" : "142.99",
+         "min" : "-136.23",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof006",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof006",
          "parameterType" : "float"
       },
       {
-         "max" : "255",
-         "min" : "-247",
+         "max" : "286.73",
+         "min" : "-269.79",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof007",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof007",
          "parameterType" : "float"
       },
       {
-         "max" : "526",
-         "min" : "-489",
+         "max" : "575.19",
+         "min" : "-560.25",
          "whetlabName" : "com_twitter_jvm_autotune_functions_Fof008",
          "name" : "Dcom.twitter.jvm.autotune.functions.Fof008",
          "parameterType" : "float"
