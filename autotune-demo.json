@@ -4,6 +4,9 @@
    "duration" : "5.minutes",
    "startupTimeout" : "1.minutes",
    "instanceRange" : "0-1",
+   "platforms" : [
+     "f3ww"
+     ],
    "parameters" : [
       {
          "max" : "3.5",
