@@ -16,7 +16,7 @@ initial_interval_secs=10,
   min_consecutive_successes=2,
   interval_secs=10)
 
-run_autotune_demo = JVMProcess( arguments=' -cp autotune-demo.jar org.hccp.jvm.jvm.autotune.Demo {{thermos.ports[admin]}} {{thermos.ports[health]}}', jvm=Java8(extra_jvm_flags = '  -Dcom.twitter.jvm.autotune.functions.Fof001=0 -Dcom.twitter.jvm.autotune.functions.Fof002=0 -Dcom.twitter.jvm.autotune.functions.Fof003=0 -Dcom.twitter.jvm.autotune.functions.Fof004=0 -Dcom.twitter.jvm.autotune.functions.Fof005=0 -Dcom.twitter.jvm.autotune.functions.Fof006=0 -Dcom.twitter.jvm.autotune.functions.Fof007=0 -Dcom.twitter.jvm.autotune.functions.Fof008=0'),resources=RESOURCES)
+run_autotune_demo = JVMProcess( arguments=' -cp autotune-demo.jar org.hccp.jvm.autotune.Demo {{thermos.ports[admin]}} {{thermos.ports[health]}}', jvm=Java8(extra_jvm_flags = '  -Dcom.twitter.jvm.autotune.functions.Fof001=0 -Dcom.twitter.jvm.autotune.functions.Fof002=0 -Dcom.twitter.jvm.autotune.functions.Fof003=0 -Dcom.twitter.jvm.autotune.functions.Fof004=0 -Dcom.twitter.jvm.autotune.functions.Fof005=0 -Dcom.twitter.jvm.autotune.functions.Fof006=0 -Dcom.twitter.jvm.autotune.functions.Fof007=0 -Dcom.twitter.jvm.autotune.functions.Fof008=0'),resources=RESOURCES)
 
 # describe the task
 run_autotune_demo_task = Task(

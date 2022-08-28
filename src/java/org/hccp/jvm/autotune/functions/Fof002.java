@@ -1,6 +1,6 @@
-package org.hccp.jvm.jvm.autotune.functions;
+package org.hccp.jvm.autotune.functions;
 
-import org.hccp.jvm.jvm.autotune.Function;
+import org.hccp.jvm.autotune.Function;
 
 import java.awt.geom.*;
 

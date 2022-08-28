@@ -1,4 +1,4 @@
-package org.hccp.jvm.jvm.autotune;
+package org.hccp.jvm.autotune;
 
 
 public interface Function {

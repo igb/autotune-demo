@@ -1,4 +1,4 @@
-package org.hccp.jvm.jvm;
+package org.hccp.jvm;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,8 +1,8 @@
-package org.hccp.jvm.jvm.autotune;
+package org.hccp.jvm.autotune;
 
 
-import org.hccp.jvm.jvm.HealthCheckServer;
-import org.hccp.jvm.jvm.StatsServer;
+import org.hccp.jvm.HealthCheckServer;
+import org.hccp.jvm.StatsServer;
 
 import java.awt.geom.Point2D;
 import java.lang.reflect.Field;
@@ -27,7 +27,7 @@ public class Demo {
         Enumeration propertyNames = props.propertyNames();
         while (propertyNames.hasMoreElements()) {
             String name = (String) propertyNames.nextElement();
-            if (name.startsWith("org.hccp.jvm.jvm.autotune.functions")) {
+            if (name.startsWith("org.hccp.jvm.autotune.functions")) {
                 Class clazz = Class.forName(name);
 
                 Field field = clazz.getField("points");
