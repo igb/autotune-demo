@@ -1,4 +1,4 @@
-package com.twitter.jvm.autotune;
+package org.hccp.jvm.jvm.autotune;
 
 
 public interface Function {

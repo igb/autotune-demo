@@ -1,8 +1,4 @@
-package com.twitter.jvm;
-
-import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
+package org.hccp.jvm.jvm;
 
 public class HealthCheckServer extends TinyServer {
 

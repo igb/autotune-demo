@@ -1,4 +1,4 @@
-package com.twitter.jvm.autotune;
+package org.hccp.jvm.jvm.autotune;
 
 import java.awt.geom.Point2D;
 import java.util.Comparator;

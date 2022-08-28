@@ -1,6 +1,6 @@
-package com.twitter.jvm.autotune.functions;
+package org.hccp.jvm.jvm.autotune.functions;
 
-import com.twitter.jvm.autotune.Function;
+import org.hccp.jvm.jvm.autotune.Function;
 
 import java.awt.geom.*;
 

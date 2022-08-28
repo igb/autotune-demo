@@ -1,4 +1,4 @@
-package com.twitter.jvm;
+package org.hccp.jvm.jvm;
 
 import java.io.*;
 
