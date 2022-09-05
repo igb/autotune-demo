@@ -5,16 +5,15 @@ import org.hccp.jvm.HealthCheckServer;
 import org.hccp.jvm.StatsServer;
 
 import java.awt.geom.Point2D;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.Properties;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
 
 public class Demo {
 
 
 
-    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException {
+    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException, IOException, URISyntaxException {
         double value = 0.0;
         double maxValue = 0.0;
 
@@ -23,33 +22,33 @@ public class Demo {
         int healthPort = Integer.parseInt(args[1]);
 
 
-        Properties props = System.getProperties();
-        Enumeration propertyNames = props.propertyNames();
-        while (propertyNames.hasMoreElements()) {
-            String name = (String) propertyNames.nextElement();
-            if (name.startsWith("org.hccp.jvm.autotune.functions")) {
+        List<String> functionNames = Utils.getClassNames();
+
+
+        for (int i = 0; i < functionNames.size(); i++) {
+            String name = functionNames.get(i);
+
+
                 Class clazz = Class.forName(name);
 
-                Field field = clazz.getField("points");
-                Class<?> t = field.getType();
-                Point2D[] points = (Point2D[]) field.get(null);
-                Point2D[] pointsClone = points.clone();
-                Arrays.sort(pointsClone, new YComparator());
-                double maxX = pointsClone[pointsClone.length - 1].getX();
-                double maxY = pointsClone[pointsClone.length - 1].getY();
+                Point2D max = Utils.getMaxY(clazz);
+
+                double maxX = max.getX();
+                double maxY = max.getY();
 
 
                 System.out.println(clazz.getSimpleName() + " X: " + maxX + " Y: " + maxY );
+
                 maxValue += maxY;
 
 
                 Function f = (Function) clazz.newInstance();
-                Double x = Double.parseDouble(props.getProperty(name));
+                Double x = Utils.getParameterValue(name);
 
                 value  += f.getYforX(x);
                 functions++;
             }
-        }
+
 
 
 
@@ -79,8 +78,6 @@ public class Demo {
 
 
     }
-
-
 
 
 }
