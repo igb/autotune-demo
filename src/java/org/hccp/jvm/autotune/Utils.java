@@ -64,6 +64,35 @@ public class Utils {
     }
 
 
+    public static List<Class> getClasses() throws IOException, URISyntaxException, ClassNotFoundException {
+       List<Class> classes = new LinkedList<Class>();
+        List<String> classNames = Utils.getClassNames();
+        for (int i = 0; i < classNames.size(); i++) {
+
+            String name = classNames.get(i);
+            Class clazz = Class.forName(name);
+
+            classes.add(clazz);
+        }
+
+        return classes;
+    }
+
+
+    public static String getJarFilePath() throws IOException {
+
+        Enumeration<URL> urls = ClassLoader.getSystemClassLoader()
+                .getResources(ORG_HCCP_JVM_AUTOTUNE_FUNCTIONS.replace(".", "/"));
+        while (urls.hasMoreElements()) {
+            URL url = urls.nextElement();
+            String path = url.getPath();
+            return path.substring(path.indexOf(':') + 1, path.indexOf('!'));
+        }
+
+        System.err.println("Could not locate autotune jar!");
+        return null;
+
+        }
 
     public static List<String> getClassNames() throws IOException, URISyntaxException {
         List<String> functionNames = new ArrayList<String>();
